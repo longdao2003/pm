@@ -6,8 +6,8 @@ import vn.humg.pm.dto.response.PasswordResponse;
 public interface PasswordService {
     PasswordResponse createPassword(PasswordRequest request);
     PasswordResponse editPassword(Integer passwordId ,PasswordRequest request);
-    PasswordResponse deletePassword();
-    PasswordResponse getPassword();
+    PasswordResponse deletePassword(Integer passwordId);
+    PasswordResponse getPasswordById(Integer passwordId);
 
 
 } 

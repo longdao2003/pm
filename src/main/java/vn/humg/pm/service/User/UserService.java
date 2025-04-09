@@ -1,4 +1,4 @@
-package vn.humg.pm.service.UserService;
+package vn.humg.pm.service.User;
 
 import vn.humg.pm.dto.request.UserRequest;
 import vn.humg.pm.dto.response.UserResponse;

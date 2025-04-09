@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import vn.humg.pm.dto.request.UserRequest;
 import vn.humg.pm.dto.response.ApiResponse;
 import vn.humg.pm.dto.response.UserResponse;
-
-import vn.humg.pm.service.UserService.UserService;
+import vn.humg.pm.service.User.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

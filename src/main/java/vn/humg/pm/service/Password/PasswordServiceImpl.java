@@ -80,35 +80,39 @@ public class PasswordServiceImpl implements PasswordService {
         }
 
         p.setPassword(password);
-        
-        try{
-            passwordRepository.save(p);
-        }
-        catch(Exception e){
-            createPassword(request);
-        }
-
+        passwordRepository.save(p);        
         return PasswordMapping.toResponse(p);
 
     }
 
     @Override
     public PasswordResponse editPassword(Integer passwordId, PasswordRequest request) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'editPassword'");
+        
+        Password p= PasswordMapping.toEntity(request);
+
+        p.setId(passwordId);
+        try{
+            passwordRepository.save(p);
+        }
+        catch(Exception e){
+            throw new RuntimeException("Password không tồn tại");
+        }
+
+        return PasswordMapping.toResponse(p);
     }
 
     @Override
-    public PasswordResponse deletePassword() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deletePassword'");
+    public PasswordResponse getPasswordById(Integer passwordId) {
+        Password p= passwordRepository.findById(passwordId).orElseThrow(() -> new RuntimeException("Password không tồn tại"));
+
+        return PasswordMapping.toResponse(p);
+    }
+    @Override
+    public PasswordResponse deletePassword(Integer passwordId) {
+        passwordRepository.deleteById(passwordId);
+        return new PasswordResponse();
     }
 
-    @Override
-    public PasswordResponse getPassword() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPassword'");
-    }
 
 
 

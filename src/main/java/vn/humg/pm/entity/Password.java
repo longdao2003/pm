@@ -22,7 +22,7 @@ public class Password {
 
     private Integer passwordLength;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String password;
 }
 

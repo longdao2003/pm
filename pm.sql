@@ -14,7 +14,7 @@ CREATE TABLE password (
     is_symbols BOOLEAN,
     is_similar_char BOOLEAN,
     password_length INT,
-    password VARCHAR(255) NOT NULL UNIQUE
+    password VARCHAR(255) NOT NULL 
 );
 
 -- Bảng logins
